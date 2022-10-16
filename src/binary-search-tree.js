@@ -14,40 +14,15 @@ class BinarySearchTree {
   //     this.right = null;
   //   }
   // }
-  constructor(){
-    this.root = null;
-  }
-
-
+  
   root() {
-
+    throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
   }
 
-  add(data ) {
-    const node = new Node(data);
-    if(!this.root){
-      this.root = node;
-      return
-    }
-    let current  = this.root;
-
-    while(current){
-      
-      if(node.data  < current.data){
-        if(!current.left){
-          current.left   = node;
-          return;
-        }
-        current = current.left
-      }else{
-        if(!current.right){
-          current.right =   node;
-          return;
-        }
-        current = current.right
-        
-      }
-    }
+  add(/* data */) {
+    throw new NotImplementedError('Not implemented');
+    // remove line with error and write your code here
   }
 
   has(/* data */) {
@@ -74,11 +49,7 @@ class BinarySearchTree {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
-
-  
 }
-
-
 
 module.exports = {
   BinarySearchTree
