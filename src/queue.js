@@ -34,10 +34,6 @@ class Queue {
     enqueue(el) {
 
     const node = new ListNode(el);
-  
-
-
-
     if (this.empty()) {
     this.start = node;
     this.finish = node;
