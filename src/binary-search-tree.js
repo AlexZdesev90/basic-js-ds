@@ -72,13 +72,64 @@ has(data) {
     return false
 }
 
-find(data) {
-   //??? !!!
+find(data) {//find leaf
+let current = this.main
+while(current.data !== data){
+    if(data < current.data){
+        current = current.left;
+        //return true
+    }
+    
+    else{
+        current = current.right;
+        //return false
+    }
+    
+
+    if(current === null){
+        return null;
+    }
+}
+return current;
 }
 
 remove(data) {
-    //??? !!!
+    
+    // let nodeRemove = function(node, data){
+    //     if(node == null){
+    //         return null
+    //     }
+    //     if(data == node.data)  {
+    //         if(node.left == null && node.right == null){
+    //             return null
+    //         }
+        
+    //     if(node.left == null){
+    //         return node.right
+    //     }
+    //     if(node.right == null){
+    //         return node.left
+    //     }
+
+    //     let nodeTemp = node.right;//temporary
+    //     while(nodeTemp.left !== null){
+    //         nodeTemp = nodeTemp.left
+    //     }
+    //     node.data = nodeTemp.data
+    //     node.right = nodeRemove(node.right, nodeTemp.data);
+    //     return node
+    // }else if(data < node.data){
+    //     node.left = nodeRemove(node.left, data);
+    //     return node 
+    // }else{
+    //     node.right = nodeRemove(node.right, data);
+    //     return node;
+    // }
+
+    // }
+    // this.main = removeNode(this.main, data)
 }
+
 
 min() {
     let current = this.main;
