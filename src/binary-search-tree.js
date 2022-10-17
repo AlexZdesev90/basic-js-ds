@@ -95,39 +95,46 @@ return current;
 
 remove(data) {
     
-    // let nodeRemove = function(node, data){
-    //     if(node == null){
-    //         return null
-    //     }
-    //     if(data == node.data)  {
-    //         if(node.left == null && node.right == null){
-    //             return null
-    //         }
+    let nodeRemove = (node, data) => {
+        if(node == null){
+            return null
+        }
+        if(data == node.data)  {
+
+
+        if(node.left == null && node.right == null){
+            return null
+        }
         
-    //     if(node.left == null){
-    //         return node.right
-    //     }
-    //     if(node.right == null){
-    //         return node.left
-    //     }
+        if(node.left == null){
 
-    //     let nodeTemp = node.right;//temporary
-    //     while(nodeTemp.left !== null){
-    //         nodeTemp = nodeTemp.left
-    //     }
-    //     node.data = nodeTemp.data
-    //     node.right = nodeRemove(node.right, nodeTemp.data);
-    //     return node
-    // }else if(data < node.data){
-    //     node.left = nodeRemove(node.left, data);
-    //     return node 
-    // }else{
-    //     node.right = nodeRemove(node.right, data);
-    //     return node;
-    // }
+            return node.right
+        }
+        if(node.right == null){
+        
+            return node.left
+        }
 
-    // }
-    // this.main = removeNode(this.main, data)
+        let nodeTemp = node.right;//temporary
+        while(nodeTemp.left !== null ){
+            nodeTemp = nodeTemp.left
+        }
+        node.data = nodeTemp.data
+        node.right = nodeRemove(node.right, nodeTemp.data);
+        return node
+    }else if(data < node.data){
+        node.left = nodeRemove(node.left, data);
+        return node 
+    }else{
+        node.right = nodeRemove(node.right, data);
+        // return nodeTemp;
+        return node;
+    }
+
+    }
+
+    this.main = nodeRemove(this.main, data)
+    // return this.main
 }
 
 
